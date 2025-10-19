@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Neo-FinanceTracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app" class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">₹</div>
+        <div>
+          <h1>Neo-Finance</h1>
+          <p class="tag">Dashboard (Portfolio)</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="tabs" role="tablist">
+          <button id="tab-individual" class="tab active">Individual</button>
+          <button id="tab-vendor" class="tab">Vendor</button>
+        </div>
+        <div class="actions">
+          <input id="search" type="search" placeholder="Search description or note…">
+          <select id="filter">
+            <option value="all">All</option>
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+          <button id="export-csv" class="btn ghost">Export CSV</button>
+          <button id="btn-analytics" class="btn outline">Analytics</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="summary">
+        <div class="card stat gradient-balance" id="card-balance"><div class="stat-icon">💰</div><small>Balance</small><div class="stat-value" id="balance">₹0.00</div></div>
+        <div class="card stat gradient-income" id="card-income"><div class="stat-icon">📈</div><small>Income</small><div class="stat-value" id="income">₹0.00</div></div>
+        <div class="card stat gradient-expense" id="card-expenses"><div class="stat-icon">📉</div><small>Expenses</small><div class="stat-value" id="expenses">₹0.00</div></div>
+        <div class="card stat gradient-count" id="card-count"><div class="stat-icon">📊</div><small>Transactions</small><div class="stat-value" id="tx-count">0</div></div>
+      </section>
+
+      <section class="panel transactions-panel card">
+        <div class="panel-head">
+          <h3>Transactions</h3>
+          <div class="panel-controls">
+            <select id="category-filter"><option value="all">All categories</option></select>
+            <button id="clear-all" class="btn ghost warn">Clear</button>
+          </div>
+        </div>
+        <ul id="transaction-list" class="tx-list" aria-live="polite"></ul>
+      </section>
+
+      <aside class="panel form-panel card">
+        <h3 id="form-title">Add Transaction</h3>
+        <form id="tx-form" autocomplete="off">
+          <label>Description<input id="desc" placeholder="e.g., Grocery, Invoice #123" required></label>
+          <label>Amount
+            <div class="amount-type">
+              <button type="button" class="amt-btn active" data-type="income">Income</button>
+              <button type="button" class="amt-btn" data-type="expense">Expense</button>
+            </div>
+            <input id="amt" type="number" step="0.01" placeholder="Enter amount" required>
+          </label>
+          <label>Category<select id="cat"><option>Income</option><option>Salary</option><option>Food</option><option>Transport</option><option>Shopping</option><option>Bills</option><option>Entertainment</option><option>Supplies</option><option>Other</option></select></label>
+          <label>Date<input id="date" type="date"></label>
+          <label>Note (optional)<input id="note" placeholder="Optional note"></label>
+          <div class="form-row">
+            <button type="submit" class="btn primary">Save</button>
+            <button type="button" id="btn-reset" class="btn ghost">Reset</button>
+          </div>
+        </form>
+      </aside>
+
+      <section class="panel charts-panel card">
+        <div class="charts-row">
+          <div class="chart-box"><small>Spending by Category</small><canvas id="pieChart" height="150"></canvas></div>
+          <div class="chart-box"><small>Cash Flow Trend</small><canvas id="lineChart" height="150"></canvas></div>
+        </div>
+      </section>
+    </main>
+
+    <div id="analytics-modal" class="modal hidden" role="dialog" aria-modal="true">
+      <div class="modal-card card">
+        <header class="modal-header">
+          <h4>Analytics</h4>
+          <button id="close-analytics" class="icon-btn">✕</button>
+        </header>
+        <div class="modal-body">
+          <div id="insights" class="insights"></div>
+          <div class="modal-charts">
+            <div><canvas id="modalPie" height="120"></canvas></div>
+            <div><canvas id="modalLine" height="120"></canvas></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Neo-Finance • Local demo</div>
+      <div>No backend • Data saved locally</div>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
