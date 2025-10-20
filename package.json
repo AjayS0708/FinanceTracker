@@ -1,6 +1,15 @@
 {
+  "name": "neo-finance-tracker",
+  "version": "1.0.0",
+  "description": "A modern finance tracking application for personal and business use",
+  "main": "script.js",
+  "scripts": {
+    "start": "open index.html"
+  },
   "dependencies": {
-    "chart.js": "^4.5.1",
-    "firebase": "^12.4.0"
-  }
+    "chart.js": "^4.5.1"
+  },
+  "keywords": ["finance", "tracker", "budget", "expense", "income"],
+  "author": "",
+  "license": "MIT"
 }
