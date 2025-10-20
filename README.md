@@ -1,73 +1,72 @@
 # Neo-Finance Tracker
 
-A modern, responsive finance tracking application that helps you manage both personal and business transactions in one place. Built with vanilla JavaScript, HTML5, and CSS3.
+A lightweight, client-side finance tracking application for managing personal and business transactions. Built with vanilla JavaScript, HTML5, and CSS3.
 
-![Neo-Finance Dashboard](screenshot.png)
+## 🚀 Features
 
-## 🌟 Features
-
-### 💰 Dual-Mode Interface
+### 💼 Dual-Mode Interface
 - **Individual Mode**: Track personal income and expenses
 - **Vendor Mode**: Manage business transactions and client payments
 
-### 📊 Financial Tracking
-- Real-time balance, income, and expense calculations
-- Transaction history with search and filter capabilities
-- Category-based transaction organization
-- Optional transaction descriptions and notes
+### 📊 Core Features
+- Real-time balance, income, and expense tracking
+- Transaction management with search and filter
+- Category-based organization
+- Optional descriptions and notes
 
-### 📈 Visual Analytics
-- Interactive pie charts for spending by category
-- Line charts for cash flow trends over time
-- Financial insights and statistics
+### 📊 Data Visualization
+- Interactive charts powered by [Chart.js](https://www.chartjs.org/)
+- Spending breakdown by category
+- Income vs. expense trends
 
-### 🛠️ Key Functionality
-- Add, edit, and delete transactions
-- Export transaction data to CSV
-- Responsive design works on all devices
+### ⚡ Technical Highlights
+- Zero dependencies (except Chart.js)
 - Local storage for data persistence
-- No backend required - works entirely in the browser
+- Responsive design
+- No backend required
 
-## 🚀 Getting Started
+## 🛠️ Getting Started
 
-1. **Prerequisites**
-   - Modern web browser (Chrome, Firefox, Safari, or Edge)
-   - No installation required
+### Prerequisites
+- Modern web browser (Chrome, Firefox, Safari, or Edge)
+- No installation required
 
-2. **Running the Application**
-   - Simply open `index.html` in your web browser
-   - All data is stored locally in your browser
-
-3. **Using the Application**
-   - Switch between Individual and Vendor modes using the tabs
-   - Add transactions with or without descriptions
-   - Use the search and filter options to find transactions
-   - View financial insights in the analytics section
+### Quick Start
+1. Clone the repository
+2. Open `index.html` in your browser
+3. Start tracking your finances!
 
 ## 📂 Project Structure
 
 ```
 FinanceTracker/
-├── index.html      # Main application HTML
-├── script.js       # Core application logic
+├── index.html      # Main application
+├── script.js       # Core logic
 ├── style.css       # Styling
-├── budget.js       # Budget management (future feature)
+├── package.json    # Project configuration
 └── README.md       # This file
 ```
 
-## 🛠️ Built With
+## 🛠️ Development
 
-- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
-- **Charts**: [Chart.js](https://www.chartjs.org/)
-- **Icons**: Emoji and Unicode symbols
-- **Animations**: Custom CSS and JavaScript
+### Setup
+```bash
+# Install dependencies
+npm install
+
+# Start local development
+npm start
+```
+
+### Dependencies
+- [Chart.js](https://www.chartjs.org/) - Data visualization
 
 ## 📝 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
-- Built with ❤️ for personal finance management
+- Built with vanilla JavaScript
+- Uses [Poppins](https://fonts.google.com/specimen/Poppins) from Google Fonts
 - Inspired by modern fintech applications
-- Uses [Poppins](https://fonts.google.com/specimen/Poppins) font from Google Fonts FinanceTracker
