@@ -81,7 +81,7 @@ function updateFormForSection(section) {
   const config = SECTION_CONFIG[section];
   const descLabel = document.querySelector('label:has(#desc)');
   
-  descLabel.innerHTML = `${config.label} <input id="desc" placeholder="${config.placeholder}" required />`;
+  descLabel.innerHTML = `${config.label} (optional)<input id="desc" placeholder="${config.placeholder}">`;
   DOM.cat.innerHTML = config.categories.map(cat => `<option>${cat}</option>`).join('');
   
   const formPanel = document.querySelector('.form-panel h3');
@@ -299,6 +299,12 @@ const generateInsights = txs => {
 /* ---------- Event Listeners ---------- */
 DOM.form.addEventListener('submit', e => {
   e.preventDefault();
+  
+  if (!DOM.amt.value || !DOM.cat.value) {
+    toast('Please fill all required fields', 'error');
+    return;
+  }
+  
   const description = DOM.desc.value.trim();
   const amount = Number(DOM.amt.value);
   const category = DOM.cat.value;
